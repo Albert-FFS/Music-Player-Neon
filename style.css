@@ -1,0 +1,113 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: #111;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+}
+h1{
+  font-size: 4em;
+  color: transparent;
+  font-weight:100;
+  -webkit-text-stroke: 1px #fff;
+  text-shadow: 
+  -2px -2px 5px #ff645e,
+  2px -2px 5px #ff645e,
+  -2px 2px 5px #ff645e,
+  2px 2px 5px #ff645e,
+  -3px -3px 10px #ff0534,
+  3px -3px 10px #ff0534,
+  -3px 3px 10px #ff0534,
+  3px 3px 10px #ff0534
+  ;
+  letter-spacing: 4px;
+}
+.Player{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 2px solid #fff;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  box-shadow:   -2px -2px 5px #b4ffff,  2px -2px 5px #b4ffff,  -2px 2px 5px #b4ffff,  2px 2px 5px #b4ffff,  -3px -3px 10px #02b4d7,  3px -3px 10px #02b4d7,  -3px 3px 10px #02b4d7,  3px 3px 10px #02b4d7,  inset -2px -2px 5px #b4ffff,  inset 2px -2px 5px #b4ffff,  inset -2px 2px 5px #b4ffff,  inset 2px 2px 5px #b4ffff,  inset -3px -3px 10px #02b4d7,  inset 3px -3px 10px #02b4d7,  inset -3px 3px 10px #02b4d7,  inset 3px 3px 10px #02b4d7  ;
+}
+.Player .buttonBox{
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+.Player h2{
+  font-size: 3em
+}
+.Player h3{
+  font-size: 2em;
+}
+.Player h4{
+  font-size: 1.5em;
+}
+.Player p i{
+  font-size: 3em;
+}
+.Player h2,
+.Player h3,
+.Player h4,
+.Player p{
+  -webkit-text-stroke: 1px #fff;
+  text-shadow: 
+  -2px -2px 5px #56fa52,
+  2px -2px 5px #56fa52,
+  -2px 2px 5px #56fa52,
+  2px 2px 5px #56fa52,
+  -3px -3px 10px #1cc725,
+  3px -3px 10px #1cc725,
+  -3px 3px 10px #1cc725,
+  3px 3px 10px #1cc725
+  ;
+  font-weight: 100;
+}
+.Player .buttonBox button{
+  padding: 10px;
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background: #111;
+  margin: 5px;
+  transition: all ease .5s;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+}
+.Player .buttonBox button:hover{
+  box-shadow:   -2px -2px 5px #b4ffff,  2px -2px 5px #b4ffff,  -2px 2px 5px #b4ffff,  2px 2px 5px #b4ffff,  -3px -3px 10px #02b4d7,  3px -3px 10px #02b4d7,  -3px 3px 10px #02b4d7,  3px 3px 10px #02b4d7;
+}
+.Player .buttonBox button i{
+  font-size: 2em;
+  -webkit-text-stroke: 1px #fff;
+  transition: all ease .5s;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+}
+.Player .buttonBox button:hover i{
+  text-shadow:   -2px -2px 5px #b4ffff,  2px -2px 5px #b4ffff,  -2px 2px 5px #b4ffff,  2px 2px 5px #b4ffff,  -3px -3px 10px #02b4d7,  3px -3px 10px #02b4d7,  -3px 3px 10px #02b4d7,  3px 3px 10px #02b4d7;
+}
