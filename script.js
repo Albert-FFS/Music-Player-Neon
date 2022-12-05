@@ -1,9 +1,9 @@
 const playHtml = '<i class="fas fa-play"></i>';
 const pauseHtml = '<i class="fas fa-pause"></i>';
-const muteHTML ='<i class="fas fa-volume-mute"></i>';
-const non_muteHtml ='<i class="fas fa-volume-off"></i>';
-const loopHtml ='<i class="fas fa-undo"></i>';
-const non_loopHtml ='<i class="fas fa-times"></i>';
+const muteHTML = '<i class="fas fa-volume-mute"></i>';
+const non_muteHtml = '<i class="fas fa-volume-off"></i>';
+const loopHtml = '<i class="fas fa-undo"></i>';
+const non_loopHtml = '<i class="fas fa-times"></i>';
 const path =
   "C:/Users/Rasm1/OneDrive/Documentos/Vs CODE/Practicas WEB DESIGN/Music Player Neon/Media/";
 const pathServer = "http://127.0.0.1:5500/media/";
@@ -38,23 +38,37 @@ const list = [
     Album: "No Need to Argue",
     Src: "Zombie.mp3",
   },
+  {
+    Title: "Rasputin",
+    Artist: "Boney M",
+    Album: "Nightflight to Venus",
+    Src: "Rasputin.mp3",
+  }
 ];
 const Clip = document.querySelector("#Audio");
 const Name_Tag = document.querySelector("#Name_Song");
 const Artist_Tag = document.querySelector("#Artist_Song");
 const Album_Tag = document.querySelector("#Album_Song");
 const Play_Pause = document.querySelector("#Play-Pause");
-const MuteButton = document.querySelector('#Mute');
-const LoopButton = document.querySelector('#Loop');
+const MuteButton = document.querySelector("#Mute");
+const LoopButton = document.querySelector("#Loop");
+const CurrentTimeTag = document.querySelector('#CurrentTimeClip');
+const DurationTag = document.querySelector("#DurationClip");
 let pointer = 0;
 let IsItPlay = false;
 function PlayClip() {
-  Play_Pause.innerHTML = pauseHtml;
-  Clip.src = pathServer + list[pointer].Src;
-  Artist_Tag.innerHTML = list[pointer].Artist;
-  Album_Tag.innerHTML = list[pointer].Album;
-  Name_Tag.innerHTML = list[pointer].Title;
+  if (Clip.src === null || Name_Tag.innerHTML != list[pointer].Title) {
+    Play_Pause.innerHTML = pauseHtml;
+    Clip.src = pathServer + list[pointer].Src;
+    Artist_Tag.innerHTML = list[pointer].Artist;
+    Album_Tag.innerHTML = list[pointer].Album;
+    Name_Tag.innerHTML = list[pointer].Title;
+  }
   Clip.play();
+  setInterval(() => {
+    Duration(Clip);
+    CurrentTime(Clip);
+  }, 1000);
   IsItPlay = true;
 }
 function PauseClip() {
@@ -71,7 +85,6 @@ function Prev() {
   PlayClip();
 }
 function Now() {
-  console.log(pointer);
   if (IsItPlay) {
     PauseClip();
   } else {
@@ -97,10 +110,33 @@ function Mute() {
 }
 function Loop() {
   if (Clip.loop) {
-    LoopButton.innerHTML =non_loopHtml;
+    LoopButton.innerHTML = non_loopHtml;
     Clip.loop = false;
   } else {
-    LoopButton.innerHTML =loopHtml;
+    LoopButton.innerHTML = loopHtml;
     Clip.loop = true;
+  }
+}
+function Duration(AudioClip){
+  let min = Math.floor(AudioClip.duration/60);
+  let sec =(Math.floor(AudioClip.duration%60)) ; 
+  DurationTag.innerHTML = (formaterTime(min) + ':'+formaterTime(sec));
+}
+function CurrentTime(AudioClip){
+  let min=0 ;
+  let sec = Math.round(AudioClip.currentTime);
+  if(sec>=60){
+    min=Math.floor(sec/60);
+    sec = Math.floor(sec%60);
+    CurrentTimeTag.innerHTML = formaterTime(min)+':'+formaterTime(sec);
+  }else{
+    CurrentTimeTag.innerHTML = formaterTime(min)+':'+formaterTime(sec);
+  }
+}
+function formaterTime(time){
+  if(time<=10){
+    return '0'+time;
+  }else{
+    return time;
   }
 }

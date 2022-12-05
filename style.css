@@ -11,6 +11,8 @@ body{
   justify-content: space-evenly;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
+  padding: 40px 10px;
 }
 h1{
   font-size: 4em;
@@ -34,6 +36,7 @@ h1{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 55vw;
   padding: 10px;
   border: 2px solid #fff;
   border-radius: 20px;
@@ -61,6 +64,7 @@ h1{
 }
 .Player p i{
   font-size: 3em;
+  padding: 20px 10px;
 }
 .Player h2,
 .Player h3,
@@ -110,4 +114,17 @@ h1{
 }
 .Player .buttonBox button:hover i{
   text-shadow:   -2px -2px 5px #b4ffff,  2px -2px 5px #b4ffff,  -2px 2px 5px #b4ffff,  2px 2px 5px #b4ffff,  -3px -3px 10px #02b4d7,  3px -3px 10px #02b4d7,  -3px 3px 10px #02b4d7,  3px 3px 10px #02b4d7;
+}
+.Player .time{
+  width: 100%;
+  display: flex;
+  padding: 10px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.Player .time h5{
+  color: #fff;
+  font-size: 1em;
+  letter-spacing: 4px;
 }

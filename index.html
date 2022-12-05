@@ -1,31 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Music Player Neon</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
-  <script defer src="https://kit.fontawesome.com/0e8b404454.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <h1>Hello World!</h1>
-  <div class="Player">
-    <h2>Name : <span id="Name_Song"></span></h2>
-    <h3>Artist : <span id="Artist_Song"></span></h3>
-    <h4>Album : <span id="Album_Song"></span></h4>
-    <audio id="Audio" src="Media/Dimension LUNE.mp3"></audio>
-    <p><i class="fas fa-music"></i></p>
-    <div class="buttonBox">
-      <button id="Prev" onclick="Prev()"><i class="fas fa-step-backward"></i></button>
-      <button id="Play-Pause" onclick="Now()"><i class="fas fa-play"></i></button>
-      <button id="Next" onclick="Next()"><i class="fas fa-step-forward"></i></button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player Neon</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <script
+      defer
+      src="https://kit.fontawesome.com/0e8b404454.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <div class="Player">
+      <h2>Name : <span id="Name_Song"></span></h2>
+      <h3>Artist : <span id="Artist_Song"></span></h3>
+      <h4>Album : <span id="Album_Song"></span></h4>
+      <audio id="Audio" src="Media/Dimension LUNE.mp3"></audio>
+      <p><i class="fas fa-music"></i></p>
+      <div class="time">
+        <h5 id="CurrentTimeClip">00:00</h5>
+        <h5 id="DurationClip">00:00</h5>
+      </div>
+      <div class="buttonBox">
+        <button id="Prev" onclick="Prev()">
+          <i class="fas fa-step-backward"></i>
+        </button>
+        <button id="Play-Pause" onclick="Now()">
+          <i class="fas fa-play"></i>
+        </button>
+        <button id="Next" onclick="Next()">
+          <i class="fas fa-step-forward"></i>
+        </button>
+      </div>
+      <div class="buttonBox">
+        <button id="Loop" onclick="Loop()"><i class="fas fa-undo"></i></button>
+        <button id="Mute" onclick="Mute()">
+          <i class="fas fa-volume-mute"></i>
+        </button>
+      </div>
     </div>
-    <div class="buttonBox">
-      <button id="Loop" onclick="Loop()"><i class="fas fa-undo"></i></button>
-      <button id="Mute" onclick="Mute()"><i class="fas fa-volume-mute"></i></button>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
