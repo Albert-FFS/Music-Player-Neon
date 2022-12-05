@@ -39,7 +39,7 @@ const Name_Tag = document.querySelector('#Name_Song');
 const Artist_Tag = document.querySelector('#Artist_Song');
 const Album_Tag = document.querySelector('#Album_Song');
 const Play_Pause = document.querySelector('#Play-Pause');
-const pointer = 0;
+let pointer = 0;
 let IsItPlay = false;
 function PlayClip(){
   console.log('Play');
@@ -55,9 +55,16 @@ function PauseClip(){
   IsItPlay = false;
 }
 function Prev(){
-
+  if(pointer <= 0 ){
+    pointer = list.length-1;
+  }
+  else{
+    pointer--;
+  }
+  PlayClip();
 }
 function Now(){
+  console.log(pointer);
   if(IsItPlay){
     PauseClip();
   }else{
@@ -65,7 +72,13 @@ function Now(){
   }
 }
 function Next(){
-
+  if(pointer >= list.length-1){
+    pointer = 0;
+  }
+  else{
+    pointer++;
+  }
+  PlayClip();
 }
 function Mute(){
 
