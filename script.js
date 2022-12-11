@@ -6,7 +6,7 @@ const loopHtml = '<i class="fas fa-undo"></i>';
 const non_loopHtml = '<i class="fas fa-times"></i>';
 const path =
   "C:/Users/Rasm1/OneDrive/Documentos/Vs CODE/Practicas WEB DESIGN/Music Player Neon/Media/";
-const pathServer = "http://127.0.0.1:5500/media/";
+const pathServer = "./media/"; //http://127.0.0.1:5500
 const list = [
   {
     Title: "Vaporwave Dimension",
@@ -54,6 +54,7 @@ const MuteButton = document.querySelector("#Mute");
 const LoopButton = document.querySelector("#Loop");
 const CurrentTimeTag = document.querySelector('#CurrentTimeClip');
 const DurationTag = document.querySelector("#DurationClip");
+const SliderTag = document.querySelector('#Slider');
 let pointer = 0;
 let IsItPlay = false;
 function PlayClip() {
@@ -68,6 +69,7 @@ function PlayClip() {
   setInterval(() => {
     Duration(Clip);
     CurrentTime(Clip);
+    SliderValue(1,Clip.duration,Clip.currentTime);
   }, 1000);
   IsItPlay = true;
 }
@@ -139,4 +141,13 @@ function formaterTime(time){
   }else{
     return time;
   }
+}
+function SliderValue(min,max,value){
+  SliderTag.min =min;
+  SliderTag.max =max;
+  SliderTag.value = value;
+}
+function setSliderValue(value){
+  Clip.currentTime = value;
+  
 }
